@@ -8,6 +8,20 @@
 </head>
 <body>
 
+<ul class="navigation">
+  <%- if current_user -%>
+    <li>Sign Out</li>
+  <%- else -%>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+  <%- end -%>
+</ul>
+
+<%- flash.each do |key, value| %>
+  <div class="flash-<%=key %>">
+    <%= value %>
+  </div>
+<%- end -%>
+
 <%= yield %>
 
 </body>
