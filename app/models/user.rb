@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
   validates :last_name,
     presence: true
+
+  def admin?
+    role == 'admin'
+  end
 end

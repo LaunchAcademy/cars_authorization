@@ -1,1 +1,7 @@
 <h1>Car Listing</h1>
+
+<%- if @cars.present? -%>
+  <%- @cars.each do |car| -%>
+    <li><%= car.friendly_title %>
+  <%- end -%>
+<%- end -%>

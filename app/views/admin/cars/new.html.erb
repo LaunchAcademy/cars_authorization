@@ -1,0 +1,43 @@
+<%- if @car.errors.any? -%>
+  <p>Invalid entry!</p>
+
+  <ul>
+    <%- @car.errors.full_messages.each do |error| -%>
+      <li><%= error %></li>
+    <%- end -%>
+  </ul>
+<%- end -%>
+<%= form_for(@car, url: [:admin, @car]) do |f| %>
+  <p>
+    <%= f.label :make %>
+    <%= f.text_field :make %>
+  </p>
+
+  <p>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </p>
+
+  <p>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </p>
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <input type="submit" value="Create Car" />
+  </p>
+<%- end -%>
